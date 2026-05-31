@@ -1,0 +1,139 @@
+﻿/* ==========================================================================
+   Work / Projecten pagina (work.html)
+   ========================================================================== */
+
+.projects-page {
+    background: var(--bg);
+}
+
+.projects-content {
+    width: 100%;
+    max-width: min(1100px, 100%);
+}
+
+.projects-page .heading {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.projects-lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 560px;
+}
+
+.project-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: start;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.project-box {
+    background: var(--bg-alt);
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition:
+        border-color 0.35s var(--ease),
+        box-shadow 0.35s var(--ease);
+}
+
+.project-box:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+}
+
+.project-box--image {
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-box--image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: calc(var(--radius-lg) - 4px);
+    display: block;
+    transition: transform 0.5s var(--ease);
+}
+
+.project-box--image:hover img {
+    transform: scale(1.02);
+}
+
+.project-box--text {
+    padding: 1.75rem 2rem;
+}
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 50px;
+}
+
+.project-title {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+}
+
+.project-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.project-text p {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+}
+
+.project-text p:last-child {
+    margin-bottom: 0;
+}
+
+.project-text strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .project-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .project-box--text {
+        padding: 1.35rem 1.25rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .projects-content {
+        max-width: 1200px;
+    }
+}
+
+html.vp-wide .projects-content {
+    max-width: 1200px;
+}
